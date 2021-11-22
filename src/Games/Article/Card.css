@@ -1,0 +1,30 @@
+.card_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  background: #4257b2;
+  border-radius: 10px;
+  height: 400px;
+  width: 300px;
+  margin: 30px;
+  font-size: 64px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.card:hover {
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgb(0 0 0 / 0%);
+  transform: scale(1.1);
+}
+
+.green {
+  background: #009100;
+}
+
+.red {
+  background: red;
+}

@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  margin: 10px 0 30px;
+}
+.card {
+  color: black;
+  border: 1px solid black;
+  background: white;
+  width: fit-content;
+  padding: 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin: 0 10px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.active {
+  background: #ff9c00;
+  color: white;
+  border-color: white;
+}
