@@ -15,6 +15,7 @@
   border-radius: 10px;
   margin: 10px;
   background: #2794cb;
+  position: relative;
 }
 .inner_container {
   display: flex;
@@ -32,7 +33,7 @@
   padding: 0 10px;
 }
 
-.inner_container div {
+.text {
   margin: 0 10px;
   color: white;
   font-size: 24px;
@@ -43,7 +44,7 @@
   width: 100%;
   align-items: center;
 }
-button {
+.button {
   height: 40px;
   background: #fd7800;
   border-radius: 10px;
@@ -60,7 +61,7 @@ button {
 .wrong {
   background: #b10d0d;
 }
-button:disabled {
+.button:disabled {
   background: grey;
 }
 

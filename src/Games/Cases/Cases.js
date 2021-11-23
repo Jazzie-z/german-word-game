@@ -1,4 +1,5 @@
 import { CASES } from "assets/cases";
+import ScoreBoard from "Games/Common/ScoreBoard";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import Card from "./Card";
@@ -46,21 +47,17 @@ const Cases = () => {
     acc: [],
     dat: [],
   });
+  const [score, setScore] = useState(0);
   const [success, setSuccess] = useState({});
   useEffect(() => {
     if (Object.keys(success).length === 0) setPhrase(generateNewPhrase());
   }, [success]);
-  // useEffect(() => {
-  //   if (success.acc !== undefined && success.dat !== undefined) {
-  //     setTimeout(() => {
-  //       setSuccess({});
-  //     }, 2000);
-  //   }
-  // }, [success]);
+
   const onCheckHandler = (type, str) => {
     if (type === "acc") {
       if (phrase.result[0].trim().toLowerCase() === str.trim().toLowerCase()) {
         setSuccess((prev) => ({ ...prev, acc: true }));
+        setScore((prev) => prev + 0.5);
       } else {
         setSuccess((prev) => ({ ...prev, acc: false }));
       }
@@ -71,19 +68,23 @@ const Cases = () => {
       );
       if (phrase.result[1].trim().toLowerCase() === str.trim().toLowerCase()) {
         setSuccess((prev) => ({ ...prev, dat: true }));
+        setScore((prev) => prev + 0.5);
       } else {
         setSuccess((prev) => ({ ...prev, dat: false }));
       }
     }
   };
+  console.log(phraseArray.length);
   return (
     <div className={styles.wrapper}>
+      <ScoreBoard score={score} total={CASES.length} />
       <Card
         acc={phrase.acc}
         dat={phrase.dat}
         onCheck={onCheckHandler}
         success={success}
         originalData={phrase.originalData}
+        number={phraseArray.length}
       />
       <button
         className={styles.button}

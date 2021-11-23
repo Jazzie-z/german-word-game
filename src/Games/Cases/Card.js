@@ -1,7 +1,8 @@
+import Number from "Games/Common/Number";
 import { useState, useEffect } from "react";
 import styles from "./Card.module.css";
 
-const Card = ({ acc, dat, onCheck, success, originalData }) => {
+const Card = ({ acc, dat, onCheck, success, originalData, number }) => {
   const [accValue, setAccValue] = useState("");
   const [datValue, setDatValue] = useState("");
   useEffect(() => {
@@ -23,20 +24,22 @@ const Card = ({ acc, dat, onCheck, success, originalData }) => {
           ].join(" ")}
         >
           <div className={styles.inner_container}>
-            <div>{acc[0]}</div>
+            <div className={styles.text}>{acc[0]}</div>
             <input
               type={"text"}
               value={accValue}
               onChange={(e) => setAccValue(e.target.value)}
               disabled={success.acc !== undefined}
             />
-            <div>{acc[1]}</div>
+            <div className={styles.text}>{acc[1]}</div>
+            <Number number={number} />
           </div>
           {success.acc === false && (
             <div className={styles.error}>{originalData.ACCUSATIVE}</div>
           )}
         </div>
         <button
+          className={styles.button}
           onClick={(e) => {
             onCheck("acc", accValue);
           }}
@@ -58,20 +61,21 @@ const Card = ({ acc, dat, onCheck, success, originalData }) => {
           ].join(" ")}
         >
           <div className={styles.inner_container}>
-            <div>{dat[0]}</div>
+            <div className={styles.text}>{dat[0]}</div>
             <input
               type={"text"}
               value={datValue}
               onChange={(e) => setDatValue(e.target.value)}
               disabled={success.dat !== undefined}
             />
-            <div>{dat[1]}</div>
+            <div className={styles.text}>{dat[1]}</div>
           </div>
           {success.dat === false && (
             <div className={styles.error}>{originalData.DATIVE}</div>
           )}
         </div>
         <button
+          className={styles.button}
           onClick={(e) => {
             onCheck("dat", datValue);
           }}

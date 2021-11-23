@@ -9,4 +9,10 @@
   padding: 0 20px;
   background: #84a720;
   color: white;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.button:disabled {
+  background: grey;
 }

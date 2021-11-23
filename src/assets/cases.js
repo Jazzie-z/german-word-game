@@ -59,7 +59,7 @@ export const CASES = [
   {
     ACCUSATIVE: "Ich gehe in den Kindergarten",
 
-    DATIVE: "_ Mein Kind ist im Kindergarten.",
+    DATIVE: "Mein Kind ist im Kindergarten.",
   },
   { ACCUSATIVE: "Ich gehe in die Disco", DATIVE: "Ich tanze in der Disco." },
   { ACCUSATIVE: "Ich gehe ins Café", DATIVE: "Ich erhole mich im Café." },

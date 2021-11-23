@@ -2,7 +2,7 @@
   background: #0a7c83;
   color: white;
   font-weight: bold;
-  font-size: 72px;
+  font-size: 48px;
   /* display: flex; */
   align-items: center;
   justify-content: center;
@@ -10,6 +10,7 @@
   margin: 0 auto;
   /* margin: auto; */
   /* width: 100%; */
-  padding: 25px;
+  padding: 20px;
   border-radius: 10px;
+  margin-bottom: 10px;
 }
