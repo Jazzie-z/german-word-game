@@ -74,9 +74,9 @@ export const CASES = [
   { ACCUSATIVE: "Ich gehe ins Museum", DATIVE: "Ich bin im Museum." },
   { ACCUSATIVE: "Ich gehe in die Post", DATIVE: "Ich warte in der Post." },
   {
-    ACCUSATIVE: "Ich gehe auf die Strae",
+    ACCUSATIVE: "Ich gehe auf die Straße",
 
-    DATIVE: "Ich spiele auf der StraRe.",
+    DATIVE: "Ich spiele auf der Straße.",
   },
   { ACCUSATIVE: "Ich gehe an den Tisch", DATIVE: "Ich sitze am Tisch," },
   {

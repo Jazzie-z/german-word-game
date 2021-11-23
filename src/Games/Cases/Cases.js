@@ -16,15 +16,24 @@ const ACC_WORDS = [
   "ans",
 ];
 
-const DATIVE_WORDS = ["im", "in der", "auf dem", "am", "an der"];
+const DATIVE_WORDS = [
+  "im",
+  "in der",
+  "auf dem",
+  "am",
+  "an der",
+  "auf der",
+  "in den",
+];
 let phraseArray = [];
 const transform = (data) => {
   const { ACCUSATIVE, DATIVE } = data;
   let accWord = ACC_WORDS.find((e) => ACCUSATIVE.includes(e));
   let datWord = DATIVE_WORDS.find((e) => DATIVE.includes(e));
+
   return {
-    acc: ACCUSATIVE.split(accWord),
-    dat: DATIVE.split(datWord),
+    acc: ACCUSATIVE.split(` ${accWord} `),
+    dat: DATIVE.split(` ${datWord} `),
     result: [accWord, datWord],
     originalData: data,
   };
