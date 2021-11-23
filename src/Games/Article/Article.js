@@ -57,19 +57,21 @@ function Article() {
   if (!newWord) return null;
   return (
     <>
-      {/* <ControlPanel
-        wordArray={wordArray}
-        limit={limit}
-        setLimit={setLimit}
-        setThreshold={setThreshold}
-      /> */}
-        <Selector active={activeCategory} setActive={setActiveCategory} />
-        <ScoreBoard
-          score={score}
-          total={Object.keys(WORDS[activeCategory]).length}
+      {false && (
+        <ControlPanel
+          wordArray={wordArray}
+          limit={limit}
+          setLimit={setLimit}
+          setThreshold={setThreshold}
         />
-        <Card article={article} updateNewWord={updateNewWord} />
-        <Word english={english} german={german} number={wordArray.length} />
+      )}
+      <Selector active={activeCategory} setActive={setActiveCategory} />
+      <ScoreBoard
+        score={score}
+        total={Object.keys(WORDS[activeCategory]).length}
+      />
+      <Card article={article} updateNewWord={updateNewWord} />
+      <Word english={english} german={german} number={wordArray.length} />
     </>
   );
 }

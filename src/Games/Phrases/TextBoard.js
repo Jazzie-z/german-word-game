@@ -1,5 +1,4 @@
 import Number from "Games/Common/Number";
-import { useState } from "react";
 import styles from "./TextBoard.module.css";
 
 const TextBoard = ({ phrase, result, onSubmit, value, setValue, number }) => {
