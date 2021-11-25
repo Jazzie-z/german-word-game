@@ -1,0 +1,28 @@
+:root {
+  --font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  --primary-color: #35485e;
+  --secondary-color: #0a9396;
+  --tertiary-color: #219ebc;
+  --background-color: #e5e5e5;
+  --card-color1: #e9d8a6;
+  --card-border: 5px;
+  --big-font: 1.5em;
+  --white: white;
+  --black: #001219;
+  --green: #3fb983;
+  --red: #ae2012;
+}
+
+body {
+  font-size: var(--big-font);
+  font-weight: bold;
+  background-color: var(--background-color);
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: var(--primary-color);
+  @media only screen and (max-width: 600px) {
+    font-size: 40%;
+  }
+}
