@@ -1,12 +1,13 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import Home from "../views/Home.vue";
-import Article from "../views/Article.vue";
+import Home from "@/views/Home.vue";
+import Article from "@/views/Article.vue";
+import Meanings from "@/views/Meanings.vue";
+import Phrases from "@/views/Phrases.vue";
 
 export const Pages = [
-  // {name: 'Home',path:'/',component: Home},
   { name: "Article", path: "/article", component: Article },
-  { name: "Phrases", path: "/phrases", component: Article },
-  { name: "Cases", path: "/cases", component: Article },
+  { name: "Meanings", path: "/meanings", component: Meanings },
+  { name: "Phrases", path: "/phrases", component: Phrases },
 ];
 const routes: Array<RouteRecordRaw> = [
   {

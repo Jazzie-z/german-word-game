@@ -1,6 +1,6 @@
 <template>
   <div class="title">Choose A Game</div>
-  <horizontal-list>
+  <list :direction="direction">
     <mini-card
       v-for="page in pageList"
       :key="page.name"
@@ -8,28 +8,43 @@
       @on-click="onClick(page.path)"
     >
     </mini-card>
-  </horizontal-list>
+  </list>
 </template>
 
 <script lang="ts">
-import HorizontalList from "@/components/collection/HorizontalList.vue";
+import List from "@/components/collection/List.vue";
 import MiniCard from "@/components/core/MiniCard.vue";
 import { Pages } from "@/router";
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  components: { MiniCard, HorizontalList },
+  components: { MiniCard, List },
   name: "Home",
-
   data() {
     return {
       pageList: Pages,
+      direction: "row",
     };
   },
   methods: {
     onClick(path: string) {
       this.$router.push(path);
     },
+    myEventHandler(event: UIEvent | null) {
+      const w = (event?.target as Window) || window;
+      if (w.innerWidth < 600) {
+        this.direction = "column";
+      } else {
+        this.direction = "row";
+      }
+    },
+  },
+  created() {
+    this.myEventHandler(null);
+    window.addEventListener("resize", this.myEventHandler);
+  },
+  unmounted() {
+    window.removeEventListener("resize", this.myEventHandler);
   },
 });
 </script>

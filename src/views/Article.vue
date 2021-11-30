@@ -1,6 +1,6 @@
 <template>
   <div class="article__container">
-    <horizontal-list>
+    <list>
       <mini-card
         v-for="value in categories"
         :key="value"
@@ -8,9 +8,9 @@
         :active="value === activeCategory"
         @on-click="onChangeCategory"
       />
-    </horizontal-list>
+    </list>
     <score-board :score="score" :total="total" />
-    <horizontal-list>
+    <list>
       <vertical-card
         v-for="value in articles"
         :key="value"
@@ -20,7 +20,7 @@
         :wrong="isWrong(value)"
         :disabled="!!activeValue || gameOver"
       />
-    </horizontal-list>
+    </list>
     <horizontal-card
       :value="german"
       :description="english"
@@ -34,7 +34,7 @@ import { defineComponent } from "vue";
 import ScoreBoard from "@/components/core/ScoreBoard.vue";
 import { generateNewWord } from "@/utils/generator";
 import VerticalCard from "@/components/core/VerticalCard.vue";
-import HorizontalList from "@/components/collection/HorizontalList.vue";
+import List from "@/components/collection/List.vue";
 import HorizontalCard from "@/components/core/HorizontalCard.vue";
 import { TIME_OUT } from "@/constants/constants";
 import { WORDS } from "@/assets/words";
@@ -60,7 +60,7 @@ export default defineComponent({
   components: {
     ScoreBoard,
     VerticalCard,
-    HorizontalList,
+    List,
     HorizontalCard,
     MiniCard,
   },
@@ -77,7 +77,7 @@ export default defineComponent({
       correct: false,
       wrong: false,
       categories,
-      activeCategory: categories[0] as string,
+      activeCategory: categories[0],
       gameOver: false,
     };
   },
@@ -130,7 +130,6 @@ export default defineComponent({
       this.activeValue = value;
     },
     onChangeCategory(value: string): void {
-      console.log("called here");
       this.activeCategory = value;
     },
     isCorrect(value: string): boolean {
